@@ -85,6 +85,9 @@ export type { MatchCardProps } from './components/MatchCard';
 export { LoginForm } from './components/LoginForm';
 export type { LoginFormProps } from './components/LoginForm';
 
+export { Logo } from './components/Logo';
+export type { LogoProps } from './components/Logo';
+
 export { SignUpForm } from './components/SignUpForm';
 export type { SignUpFormProps } from './components/SignUpForm';
 

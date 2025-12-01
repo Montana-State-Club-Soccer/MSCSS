@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Header } from '../components/Header';
 import { Button } from '../components/Button';
+import { Logo } from '../components/Logo';
 
 const meta: Meta<typeof Header> = {
   title: 'Components/Header',
@@ -64,14 +65,7 @@ export const Sticky: Story = {
 
 export const WithCustomLogo: Story = {
   args: {
-    logo: (
-      <div className="flex items-center gap-2">
-        <div className="w-8 h-8 md:w-10 md:h-10 bg-secondary rounded-full flex items-center justify-center">
-          <span className="text-primary font-bold text-sm md:text-base">MS</span>
-        </div>
-        <span className="text-white font-bold">Montana State</span>
-      </div>
-    ),
+    logo: <Logo size="md" />,
     navItems,
     actions: <Button variant="secondary">Sign In</Button>,
   },
