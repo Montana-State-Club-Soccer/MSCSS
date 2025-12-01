@@ -1336,8 +1336,8 @@ const it = m(
 it.displayName = "LoginForm";
 const ot = {
   sm: "w-12 h-9",
-  md: "w-20 h-15",
-  lg: "w-28 h-21"
+  md: "w-20 h-16",
+  lg: "w-28 h-22"
 }, ct = m(
   ({ size: r = "md", className: t, ...a }, s) => /* @__PURE__ */ c(
     "svg",

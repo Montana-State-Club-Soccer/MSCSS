@@ -6,8 +6,8 @@ export interface LogoProps extends SVGAttributes<SVGSVGElement> {
 
 const sizeClasses = {
   sm: 'w-12 h-9',
-  md: 'w-20 h-15',
-  lg: 'w-28 h-21',
+  md: 'w-20 h-16',
+  lg: 'w-28 h-22',
 };
 
 export const Logo = forwardRef<SVGSVGElement, LogoProps>(
