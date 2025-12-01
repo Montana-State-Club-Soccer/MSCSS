@@ -1,6 +1,5 @@
 // Export all components here
-// Example:
-// export { Button } from './components/Button';
-// export { Card } from './components/Card';
+export { Icon } from './components/Icon';
+export type { IconProps } from './components/Icon';
 
 export const version = '0.1.0';
