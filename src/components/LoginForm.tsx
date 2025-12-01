@@ -10,10 +10,34 @@ export interface LoginFormProps {
   isLoading?: boolean;
   error?: string;
   className?: string;
+  emailLabel?: string;
+  emailPlaceholder?: string;
+  passwordLabel?: string;
+  passwordPlaceholder?: string;
+  rememberLabel?: string;
+  forgotPasswordText?: string;
+  forgotPasswordHref?: string;
+  submitText?: string;
+  loadingText?: string;
 }
 
 export const LoginForm = forwardRef<HTMLFormElement, LoginFormProps>(
-  ({ onSubmit, isLoading = false, error, className, ...props }, ref) => {
+  ({ 
+    onSubmit, 
+    isLoading = false, 
+    error, 
+    className,
+    emailLabel = 'Email',
+    emailPlaceholder,
+    passwordLabel = 'Password',
+    passwordPlaceholder,
+    rememberLabel = 'Remember me',
+    forgotPasswordText,
+    forgotPasswordHref,
+    submitText = 'Sign in',
+    loadingText = 'Signing in...',
+    ...props 
+  }, ref) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [remember, setRemember] = useState(false);
@@ -38,8 +62,8 @@ export const LoginForm = forwardRef<HTMLFormElement, LoginFormProps>(
 
         <Input
           type="email"
-          label="Email"
-          placeholder="your@email.com"
+          label={emailLabel}
+          placeholder={emailPlaceholder}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           icon={<Mail className="w-5 h-5" />}
@@ -50,8 +74,8 @@ export const LoginForm = forwardRef<HTMLFormElement, LoginFormProps>(
 
         <Input
           type="password"
-          label="Password"
-          placeholder="••••••••"
+          label={passwordLabel}
+          placeholder={passwordPlaceholder}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           icon={<Lock className="w-5 h-5" />}
@@ -62,21 +86,23 @@ export const LoginForm = forwardRef<HTMLFormElement, LoginFormProps>(
 
         <div className="flex items-center justify-between">
           <Checkbox
-            label="Remember me"
+            label={rememberLabel}
             checked={remember}
             onChange={(e) => setRemember(e.target.checked)}
             disabled={isLoading}
           />
-          <a
-            href="#"
-            className="text-sm md:text-base text-secondary hover:text-secondary/80 font-medium"
-          >
-            Forgot password?
-          </a>
+          {forgotPasswordText && forgotPasswordHref && (
+            <a
+              href={forgotPasswordHref}
+              className="text-sm md:text-base text-secondary hover:text-secondary/80 font-medium"
+            >
+              {forgotPasswordText}
+            </a>
+          )}
         </div>
 
         <Button type="submit" fullWidth disabled={isLoading}>
-          {isLoading ? 'Signing in...' : 'Sign in'}
+          {isLoading ? loadingText : submitText}
         </Button>
       </form>
     );

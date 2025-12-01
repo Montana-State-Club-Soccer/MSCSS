@@ -10,10 +10,40 @@ export interface SignUpFormProps {
   isLoading?: boolean;
   error?: string;
   className?: string;
+  nameLabel?: string;
+  namePlaceholder?: string;
+  emailLabel?: string;
+  emailPlaceholder?: string;
+  passwordLabel?: string;
+  passwordPlaceholder?: string;
+  confirmPasswordLabel?: string;
+  confirmPasswordPlaceholder?: string;
+  termsLabel?: string;
+  passwordMismatchError?: string;
+  submitText?: string;
+  loadingText?: string;
 }
 
 export const SignUpForm = forwardRef<HTMLFormElement, SignUpFormProps>(
-  ({ onSubmit, isLoading = false, error, className, ...props }, ref) => {
+  ({ 
+    onSubmit, 
+    isLoading = false, 
+    error, 
+    className,
+    nameLabel = 'Full Name',
+    namePlaceholder,
+    emailLabel = 'Email',
+    emailPlaceholder,
+    passwordLabel = 'Password',
+    passwordPlaceholder,
+    confirmPasswordLabel = 'Confirm Password',
+    confirmPasswordPlaceholder,
+    termsLabel = 'I agree to the Terms of Service and Privacy Policy',
+    passwordMismatchError = 'Passwords do not match',
+    submitText = 'Create account',
+    loadingText = 'Creating account...',
+    ...props 
+  }, ref) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -25,7 +55,7 @@ export const SignUpForm = forwardRef<HTMLFormElement, SignUpFormProps>(
       e.preventDefault();
       
       if (password !== confirmPassword) {
-        setPasswordError('Passwords do not match');
+        setPasswordError(passwordMismatchError);
         return;
       }
       
@@ -48,8 +78,8 @@ export const SignUpForm = forwardRef<HTMLFormElement, SignUpFormProps>(
 
         <Input
           type="text"
-          label="Full Name"
-          placeholder="John Doe"
+          label={nameLabel}
+          placeholder={namePlaceholder}
           value={name}
           onChange={(e) => setName(e.target.value)}
           icon={<User className="w-5 h-5" />}
@@ -60,8 +90,8 @@ export const SignUpForm = forwardRef<HTMLFormElement, SignUpFormProps>(
 
         <Input
           type="email"
-          label="Email"
-          placeholder="your@email.com"
+          label={emailLabel}
+          placeholder={emailPlaceholder}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           icon={<Mail className="w-5 h-5" />}
@@ -72,8 +102,8 @@ export const SignUpForm = forwardRef<HTMLFormElement, SignUpFormProps>(
 
         <Input
           type="password"
-          label="Password"
-          placeholder="••••••••"
+          label={passwordLabel}
+          placeholder={passwordPlaceholder}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           icon={<Lock className="w-5 h-5" />}
@@ -84,8 +114,8 @@ export const SignUpForm = forwardRef<HTMLFormElement, SignUpFormProps>(
 
         <Input
           type="password"
-          label="Confirm Password"
-          placeholder="••••••••"
+          label={confirmPasswordLabel}
+          placeholder={confirmPasswordPlaceholder}
           value={confirmPassword}
           onChange={(e) => {
             setConfirmPassword(e.target.value);
@@ -99,7 +129,7 @@ export const SignUpForm = forwardRef<HTMLFormElement, SignUpFormProps>(
         />
 
         <Checkbox
-          label="I agree to the Terms of Service and Privacy Policy"
+          label={termsLabel}
           checked={terms}
           onChange={(e) => setTerms(e.target.checked)}
           disabled={isLoading}
@@ -107,7 +137,7 @@ export const SignUpForm = forwardRef<HTMLFormElement, SignUpFormProps>(
         />
 
         <Button type="submit" fullWidth disabled={isLoading || !terms}>
-          {isLoading ? 'Creating account...' : 'Create account'}
+          {isLoading ? loadingText : submitText}
         </Button>
       </form>
     );

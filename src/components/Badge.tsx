@@ -7,7 +7,7 @@ export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
 
 const variantClasses = {
   primary: 'bg-primary text-white',
-  secondary: 'bg-secondary text-black',
+  secondary: 'bg-secondary text-primary',
 };
 
 export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(

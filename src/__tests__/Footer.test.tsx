@@ -3,10 +3,9 @@ import { render, screen } from '@testing-library/react';
 import { Footer, FooterSection, FooterLink } from '../components/Footer';
 
 describe('Footer', () => {
-  it('renders footer with default copyright', () => {
-    render(<Footer />);
-    const currentYear = new Date().getFullYear();
-    expect(screen.getByText(`© ${currentYear} Montana State Club Soccer. All rights reserved.`)).toBeInTheDocument();
+  it('renders footer without copyright when not provided', () => {
+    const { container } = render(<Footer />);
+    expect(container.querySelector('footer')).toBeInTheDocument();
   });
 
   it('renders footer with custom copyright', () => {

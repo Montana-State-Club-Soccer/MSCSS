@@ -17,8 +17,6 @@ export interface FooterLinkProps extends HTMLAttributes<HTMLAnchorElement> {
 
 export const Footer = forwardRef<HTMLElement, FooterProps>(
   ({ logo, copyright, columns, className, children, ...props }, ref) => {
-    const currentYear = new Date().getFullYear();
-    const copyrightText = copyright || `© ${currentYear} Montana State Club Soccer. All rights reserved.`;
 
     return (
       <footer
@@ -43,9 +41,11 @@ export const Footer = forwardRef<HTMLElement, FooterProps>(
             {children}
           </div>
 
-          <div className="pt-6 md:pt-8 border-t border-secondary/30 text-center text-sm md:text-base text-white/80">
-            {copyrightText}
-          </div>
+          {copyright && (
+            <div className="pt-6 md:pt-8 border-t border-secondary/30 text-center text-sm md:text-base text-white/80">
+              {copyright}
+            </div>
+          )}
         </div>
       </footer>
     );

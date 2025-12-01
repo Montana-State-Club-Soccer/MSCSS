@@ -11,7 +11,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantClasses = {
   primary: 'bg-primary hover:bg-primary-hover active:bg-primary-active text-white',
-  secondary: 'bg-secondary hover:bg-secondary-hover active:bg-secondary-active text-black',
+  secondary: 'bg-secondary hover:bg-secondary-hover active:bg-secondary-active text-primary',
 };
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(

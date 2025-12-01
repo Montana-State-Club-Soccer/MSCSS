@@ -14,14 +14,14 @@ export interface CardFooterProps extends HTMLAttributes<HTMLDivElement> {}
 
 const variantClasses = {
   blue: {
-    elevated: 'bg-primary shadow-lg',
-    outlined: 'bg-primary border-2 border-secondary',
-    filled: 'bg-primary/90',
+    elevated: 'bg-primary text-white shadow-lg',
+    outlined: 'bg-primary text-white border-2 border-secondary',
+    filled: 'bg-primary/90 text-white',
   },
   gold: {
-    elevated: 'bg-secondary shadow-lg',
-    outlined: 'bg-secondary border-2 border-primary',
-    filled: 'bg-secondary/90',
+    elevated: 'bg-secondary text-primary shadow-lg',
+    outlined: 'bg-secondary text-primary border-2 border-primary',
+    filled: 'bg-secondary/90 text-primary',
   },
 };
 

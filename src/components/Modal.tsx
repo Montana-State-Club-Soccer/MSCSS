@@ -77,7 +77,7 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
                 </div>
               )}
 
-              <div className="px-4 py-4 md:px-6 md:py-6">{children}</div>
+              <div className="px-4 py-4 md:px-6 md:py-6 text-white">{children}</div>
 
               {footer && (
                 <div className="px-4 py-3 md:px-6 md:py-4 border-t border-secondary bg-primary/70 rounded-b-lg">
