@@ -34,13 +34,13 @@ describe('Modal', () => {
   it('calls onClose when backdrop is clicked', async () => {
     const user = userEvent.setup();
     const onClose = vi.fn();
-    render(
+    const { container } = render(
       <Modal isOpen={true} onClose={onClose}>
         <p>Content</p>
       </Modal>
     );
     
-    const backdrop = screen.getByRole('dialog').parentElement?.previousSibling as HTMLElement;
+    const backdrop = container.querySelector('.fixed.inset-0.bg-black') as HTMLElement;
     await user.click(backdrop);
     expect(onClose).toHaveBeenCalled();
   });

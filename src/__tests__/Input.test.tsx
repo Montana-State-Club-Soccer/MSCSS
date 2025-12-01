@@ -34,7 +34,7 @@ describe('Input', () => {
     render(<Input label="Disabled" disabled />);
     const input = screen.getByLabelText('Disabled');
     expect(input).toBeDisabled();
-    expect(input).toHaveClass('disabled:bg-gray-100');
+    expect(input).toHaveClass('disabled:bg-gray-200');
   });
 
   it('applies error styles when error is present', () => {

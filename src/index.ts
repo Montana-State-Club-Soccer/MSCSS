@@ -16,6 +16,9 @@ export type { DropdownProps, DropdownItemProps } from './components/Dropdown';
 export { Footer, FooterSection, FooterLink } from './components/Footer';
 export type { FooterProps, FooterSectionProps, FooterLinkProps } from './components/Footer';
 
+export { Header } from './components/Header';
+export type { HeaderProps } from './components/Header';
+
 export { Grid } from './components/Grid';
 export type { GridProps } from './components/Grid';
 

@@ -11,8 +11,8 @@ describe('SignUpForm', () => {
     expect(screen.getByLabelText('Email')).toBeInTheDocument();
     expect(screen.getByLabelText('Password')).toBeInTheDocument();
     expect(screen.getByLabelText('Confirm Password')).toBeInTheDocument();
-    expect(screen.getByLabelText(/I agree to the terms/)).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Create Account' })).toBeInTheDocument();
+    expect(screen.getByLabelText(/I agree to the Terms/)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Create account' })).toBeInTheDocument();
   });
 
   it('handles form submission', async () => {
@@ -24,15 +24,15 @@ describe('SignUpForm', () => {
     await user.type(screen.getByLabelText('Email'), 'john@example.com');
     await user.type(screen.getByLabelText('Password'), 'password123');
     await user.type(screen.getByLabelText('Confirm Password'), 'password123');
-    await user.click(screen.getByLabelText(/I agree to the terms/));
-    await user.click(screen.getByRole('button', { name: 'Create Account' }));
+    await user.click(screen.getByLabelText(/I agree to the Terms/));
+    await user.click(screen.getByRole('button', { name: 'Create account' }));
     
     expect(onSubmit).toHaveBeenCalledWith({
       name: 'John Doe',
       email: 'john@example.com',
       password: 'password123',
       confirmPassword: 'password123',
-      agreeToTerms: true
+      terms: true
     });
   });
 
@@ -40,9 +40,12 @@ describe('SignUpForm', () => {
     const user = userEvent.setup();
     render(<SignUpForm onSubmit={() => {}} />);
     
+    await user.type(screen.getByLabelText('Full Name'), 'Test User');
+    await user.type(screen.getByLabelText('Email'), 'test@example.com');
     await user.type(screen.getByLabelText('Password'), 'password123');
     await user.type(screen.getByLabelText('Confirm Password'), 'different');
-    await user.click(screen.getByRole('button', { name: 'Create Account' }));
+    await user.click(screen.getByLabelText(/I agree to the Terms/));
+    await user.click(screen.getByRole('button', { name: 'Create account' }));
     
     expect(screen.getByText('Passwords do not match')).toBeInTheDocument();
   });

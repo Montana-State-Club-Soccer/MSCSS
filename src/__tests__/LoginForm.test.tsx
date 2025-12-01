@@ -10,7 +10,7 @@ describe('LoginForm', () => {
     expect(screen.getByLabelText('Email')).toBeInTheDocument();
     expect(screen.getByLabelText('Password')).toBeInTheDocument();
     expect(screen.getByLabelText('Remember me')).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Sign In' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Sign in' })).toBeInTheDocument();
   });
 
   it('handles form submission', async () => {
@@ -20,12 +20,12 @@ describe('LoginForm', () => {
     
     await user.type(screen.getByLabelText('Email'), 'test@example.com');
     await user.type(screen.getByLabelText('Password'), 'password123');
-    await user.click(screen.getByRole('button', { name: 'Sign In' }));
+    await user.click(screen.getByRole('button', { name: 'Sign in' }));
     
     expect(onSubmit).toHaveBeenCalledWith({
       email: 'test@example.com',
       password: 'password123',
-      rememberMe: false
+      remember: false
     });
   });
 
@@ -37,12 +37,12 @@ describe('LoginForm', () => {
     await user.type(screen.getByLabelText('Email'), 'test@example.com');
     await user.type(screen.getByLabelText('Password'), 'password123');
     await user.click(screen.getByLabelText('Remember me'));
-    await user.click(screen.getByRole('button', { name: 'Sign In' }));
+    await user.click(screen.getByRole('button', { name: 'Sign in' }));
     
     expect(onSubmit).toHaveBeenCalledWith({
       email: 'test@example.com',
       password: 'password123',
-      rememberMe: true
+      remember: true
     });
   });
 

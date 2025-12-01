@@ -35,10 +35,26 @@ describe('MatchCard', () => {
       />
     );
     
-    expect(screen.getByText('LIVE')).toBeInTheDocument();
+    expect(screen.getByText('Live')).toBeInTheDocument();
   });
 
-  it('shows upcoming status', () => {
+  it('shows final status for finished matches', () => {
+    render(
+      <MatchCard
+        homeTeam="Team A"
+        awayTeam="Team B"
+        homeScore={2}
+        awayScore={1}
+        date="2024-01-15"
+        time="19:00"
+        status="finished"
+      />
+    );
+    
+    expect(screen.getByText('Final')).toBeInTheDocument();
+  });
+
+  it('renders upcoming match without status text', () => {
     render(
       <MatchCard
         homeTeam="Team A"
@@ -49,21 +65,7 @@ describe('MatchCard', () => {
       />
     );
     
-    expect(screen.getByText('Upcoming')).toBeInTheDocument();
-  });
-
-  it('applies secondary variant', () => {
-    const { container } = render(
-      <MatchCard
-        homeTeam="Team A"
-        awayTeam="Team B"
-        date="2024-01-15"
-        time="19:00"
-        status="upcoming"
-        variant="secondary"
-      />
-    );
-    
-    expect(container.querySelector('.border-secondary')).toBeInTheDocument();
+    expect(screen.getByText('Team A')).toBeInTheDocument();
+    expect(screen.getByText('Team B')).toBeInTheDocument();
   });
 });

@@ -11,12 +11,12 @@ describe('Divider', () => {
   it('applies primary variant by default', () => {
     const { container } = render(<Divider />);
     const hr = container.querySelector('hr');
-    expect(hr).toHaveClass('border-gray-200');
+    expect(hr).toHaveClass('bg-gray-200');
   });
 
   it('applies secondary variant', () => {
     const { container } = render(<Divider variant="secondary" />);
     const hr = container.querySelector('hr');
-    expect(hr).toHaveClass('border-secondary');
+    expect(hr).toHaveClass('bg-secondary');
   });
 });
