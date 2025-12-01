@@ -1,0 +1,1 @@
+{"version":3,"file":"Spinner.d.ts","sourceRoot":"","sources":["../../src/components/Spinner.tsx"],"names":[],"mappings":"AAAA,OAAO,EAAE,cAAc,EAAc,MAAM,OAAO,CAAC;AAGnD,MAAM,WAAW,YAAa,SAAQ,cAAc,CAAC,cAAc,CAAC;IAClE,OAAO,CAAC,EAAE,SAAS,GAAG,WAAW,CAAC;IAClC,KAAK,CAAC,EAAE,MAAM,CAAC;CAChB;AAED,eAAO,MAAM,OAAO,yGAsBnB,CAAC"}

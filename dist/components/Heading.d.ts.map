@@ -1,0 +1,1 @@
+{"version":3,"file":"Heading.d.ts","sourceRoot":"","sources":["../../src/components/Heading.tsx"],"names":[],"mappings":"AAAA,OAAO,EAAE,cAAc,EAAc,MAAM,OAAO,CAAC;AAGnD,MAAM,WAAW,YAAa,SAAQ,cAAc,CAAC,kBAAkB,CAAC;IACtE,EAAE,CAAC,EAAE,IAAI,GAAG,IAAI,GAAG,IAAI,GAAG,IAAI,GAAG,IAAI,GAAG,IAAI,CAAC;IAC7C,OAAO,CAAC,EAAE,SAAS,GAAG,WAAW,CAAC;CACnC;AAgBD,eAAO,MAAM,OAAO,6GAiBnB,CAAC"}

@@ -1,0 +1,37 @@
+# Source files (users only need dist/)
+src/
+.storybook/
+
+# Config files
+tsconfig.json
+tsconfig.node.json
+vite.config.ts
+tailwind.config.js
+postcss.config.js
+.eslintrc.cjs
+vitest.config.ts
+
+# Test files
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+**/*.spec.tsx
+__tests__/
+*.stories.tsx
+.storybook/
+
+# Development files
+.gitignore
+.eslintcache
+.vscode/
+*.log
+
+# Documentation (optional - include if you want)
+README.md
+
+# CI/CD
+.github/
+
+# Package manager
+.npmignore
+.changeset/
