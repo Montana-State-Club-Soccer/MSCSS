@@ -7,15 +7,17 @@ export interface ImageBlockProps extends HTMLAttributes<HTMLDivElement> {
   title?: string;
   description?: string;
   variant?: 'primary' | 'secondary';
-  aspectRatio?: 'square' | 'wide' | 'tall';
+  aspectRatio?: 'square' | 'wide' | 'tall' | 'panoramic';
 }
 
-const getAspectRatioClass = (ratio: 'square' | 'wide' | 'tall') => {
+const getAspectRatioClass = (ratio: 'square' | 'wide' | 'tall' | 'panoramic') => {
   switch (ratio) {
     case 'wide':
       return 'aspect-[4/3] md:aspect-[16/9]';
     case 'tall':
       return 'aspect-[3/4] md:aspect-[9/16]';
+    case 'panoramic':
+      return 'h-48 md:h-64 lg:h-80 xl:h-96 aspect-auto'
     case 'square':
     default:
       return 'aspect-square md:aspect-[5/4]';
@@ -37,12 +39,16 @@ export const ImageBlock = forwardRef<HTMLDivElement, ImageBlockProps>(
   ) => {
     const hasTextContent = title || description;
 
+    const isPanoramic = aspectRatio === 'panoramic';
+
     return (
       <div
         ref={ref}
         className={clsx(
           'bg-primary rounded-lg shadow-md overflow-hidden transition-transform duration-200 hover:shadow-lg hover:-translate-y-1',
-          'max-w-md w-full mx-auto', 
+          isPanoramic 
+            ? 'w-full rounded-none shadow-none hover:shadow-none hover:-translate-y-0'
+            : 'max-w-md w-full mx-auto',
           className
         )}
         {...props}
