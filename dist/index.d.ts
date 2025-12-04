@@ -60,5 +60,7 @@ export { Logo } from './components/Logo';
 export type { LogoProps } from './components/Logo';
 export { SignUpForm } from './components/SignUpForm';
 export type { SignUpFormProps } from './components/SignUpForm';
+export { ImageBlock } from './components/ImageBlock';
+export type { ImageBlockProps } from './components/ImageBlock';
 export declare const version = "0.1.0";
 //# sourceMappingURL=index.d.ts.map
