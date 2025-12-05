@@ -1502,7 +1502,7 @@ const pt = (r) => {
     case "tall":
       return "aspect-[3/4] md:aspect-[9/16]";
     case "panoramic":
-      return "h-48 md:h-64 lg:h-80 xl:h-96 aspect-auto";
+      return "h-56 md:h-72 lg:h-96 xl:h-112 aspect-auto";
     case "square":
     default:
       return "aspect-square md:aspect-[5/4]";
