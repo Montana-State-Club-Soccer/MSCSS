@@ -1157,12 +1157,13 @@ const nt = m(
       ref: x,
       className: l(
         "bg-primary rounded-lg shadow-md overflow-hidden transition-transform duration-200 hover:shadow-lg hover:-translate-y-1",
+        "max-w-sm mx-auto",
         o
       ),
       ...i,
       children: [
         /* @__PURE__ */ c("div", { className: l(
-          "relative h-48 md:h-64 flex items-center justify-center",
+          "relative w-full aspect-square flex items-center justify-center",
           n === "primary" ? "bg-primary" : "bg-secondary"
         ), children: [
           s ? /* @__PURE__ */ e("img", { src: s, alt: r, className: "w-full h-full object-cover" }) : /* @__PURE__ */ e(U, { className: "w-20 h-20 md:w-24 md:h-24 text-white opacity-50" }),
