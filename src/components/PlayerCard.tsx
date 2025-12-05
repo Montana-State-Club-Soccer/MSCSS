@@ -18,12 +18,13 @@ export const PlayerCard = forwardRef<HTMLDivElement, PlayerCardProps>(
         ref={ref}
         className={clsx(
           'bg-primary rounded-lg shadow-md overflow-hidden transition-transform duration-200 hover:shadow-lg hover:-translate-y-1',
+          'max-w-sm mx-auto',
           className
         )}
         {...props}
       >
         <div className={clsx(
-          'relative h-48 md:h-64 flex items-center justify-center',
+          'relative w-full aspect-square flex items-center justify-center',
           variant === 'primary' ? 'bg-primary' : 'bg-secondary'
         )}>
           {image ? (
