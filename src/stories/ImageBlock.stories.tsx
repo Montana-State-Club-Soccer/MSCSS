@@ -13,7 +13,7 @@ const meta: Meta<typeof ImageBlock> = {
     },
     aspectRatio: {
       control: 'select',
-      options: ['square', 'wide', 'tall'],
+      options: ['square', 'wide', 'tall', 'panoramic'],
       description: 'The aspect ratio of the image container.',
     },
   },
@@ -67,5 +67,14 @@ export const TallAspect: Story = {
     title: 'Portrait Mode',
     aspectRatio: 'tall',
     description: 'A taller aspect ratio, great for portrait-style content.',
+  },
+};
+
+  export const PanoramicBanner: Story = {
+  args: {
+    image: 'https://via.placeholder.com/1920x400/00bcd4/ffffff?text=Full+Width+Panoramic+Banner',
+    aspectRatio: 'panoramic',
+    title: 'Explore the Horizon', 
+    description: 'This block spans the full width of the viewport and uses defined responsive heights.',
   },
 };

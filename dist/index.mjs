@@ -1,6 +1,6 @@
 import { jsx as e, jsxs as c, Fragment as M } from "react/jsx-runtime";
 import { forwardRef as m, useState as h, useRef as ee, useEffect as P, createContext as E, useContext as N } from "react";
-import { ChevronDown as z, X as T, Menu as W, XCircle as te, AlertCircle as re, CheckCircle as ae, Info as se, User as U, Calendar as de, MapPin as le, Mail as G, Lock as B, Image as ie } from "lucide-react";
+import { ChevronDown as z, X as T, Menu as W, XCircle as te, AlertCircle as re, CheckCircle as ae, Info as se, User as U, Calendar as de, MapPin as le, Mail as G, Lock as B, Image as ne } from "lucide-react";
 function X(r) {
   var t, a, s = "";
   if (typeof r == "string" || typeof r == "number") s += r;
@@ -44,9 +44,9 @@ const ce = {
     iconPosition: a = "left",
     fullWidth: s = !1,
     className: d,
-    children: i,
+    children: n,
     disabled: o,
-    ...n
+    ...i
   }, x) => /* @__PURE__ */ c(
     "button",
     {
@@ -61,10 +61,10 @@ const ce = {
         s && "w-full",
         d
       ),
-      ...n,
+      ...i,
       children: [
         t && a === "left" && /* @__PURE__ */ e(t, { className: "w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6" }),
-        i,
+        n,
         t && a === "right" && /* @__PURE__ */ e(t, { className: "w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6" })
       ]
     }
@@ -88,10 +88,10 @@ const me = {
   md: "p-6",
   lg: "p-8"
 }, pe = m(
-  ({ variant: r = "elevated", padding: t = "md", hoverable: a = !1, colorScheme: s = "blue", className: d, children: i, ...o }, n) => /* @__PURE__ */ e(
+  ({ variant: r = "elevated", padding: t = "md", hoverable: a = !1, colorScheme: s = "blue", className: d, children: n, ...o }, i) => /* @__PURE__ */ e(
     "div",
     {
-      ref: n,
+      ref: i,
       className: l(
         "rounded-lg transition-all duration-200",
         me[s][r],
@@ -100,7 +100,7 @@ const me = {
         d
       ),
       ...o,
-      children: i
+      children: n
     }
   )
 );
@@ -122,10 +122,10 @@ const ye = {
   xl: "max-w-[1440px]",
   full: "max-w-full"
 }, ge = m(
-  ({ size: r = "lg", padding: t = !0, className: a, children: s, ...d }, i) => /* @__PURE__ */ e(
+  ({ size: r = "lg", padding: t = !0, className: a, children: s, ...d }, n) => /* @__PURE__ */ e(
     "div",
     {
-      ref: i,
+      ref: n,
       className: l(
         "mx-auto w-full",
         ye[r],
@@ -139,11 +139,11 @@ const ye = {
 );
 ge.displayName = "Container";
 const fe = m(
-  ({ trigger: r, align: t = "left", className: a, children: s, ...d }, i) => {
-    const [o, n] = h(!1), x = ee(null);
+  ({ trigger: r, align: t = "left", className: a, children: s, ...d }, n) => {
+    const [o, i] = h(!1), x = ee(null);
     return P(() => {
       const u = (p) => {
-        x.current && !x.current.contains(p.target) && n(!1);
+        x.current && !x.current.contains(p.target) && i(!1);
       };
       return o && document.addEventListener("mousedown", u), () => {
         document.removeEventListener("mousedown", u);
@@ -152,7 +152,7 @@ const fe = m(
       /* @__PURE__ */ c(
         "button",
         {
-          onClick: () => n(!o),
+          onClick: () => i(!o),
           className: "inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2",
           children: [
             r,
@@ -180,10 +180,10 @@ const fe = m(
 );
 fe.displayName = "Dropdown";
 const Ne = m(
-  ({ disabled: r = !1, className: t, children: a, onClick: s, ...d }, i) => /* @__PURE__ */ e(
+  ({ disabled: r = !1, className: t, children: a, onClick: s, ...d }, n) => /* @__PURE__ */ e(
     "button",
     {
-      ref: i,
+      ref: n,
       disabled: r,
       className: l(
         "block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900",
@@ -200,16 +200,16 @@ const Ne = m(
 );
 Ne.displayName = "DropdownItem";
 const Ce = m(
-  ({ logo: r, copyright: t, columns: a, className: s, children: d, ...i }, o) => /* @__PURE__ */ e(
+  ({ logo: r, copyright: t, columns: a, className: s, children: d, ...n }, o) => /* @__PURE__ */ e(
     "footer",
     {
       ref: o,
       className: l("bg-primary text-white border-t-2 border-secondary", s),
-      ...i,
+      ...n,
       children: /* @__PURE__ */ c("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12", children: [
         /* @__PURE__ */ c("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-6 md:mb-8", children: [
           r && /* @__PURE__ */ e("div", { className: "col-span-1", children: r }),
-          a == null ? void 0 : a.map((n, x) => /* @__PURE__ */ e("div", { className: "col-span-1", children: n }, x)),
+          a == null ? void 0 : a.map((i, x) => /* @__PURE__ */ e("div", { className: "col-span-1", children: i }, x)),
           d
         ] }),
         t && /* @__PURE__ */ e("div", { className: "pt-6 md:pt-8 border-t border-secondary/30 text-center text-sm md:text-base text-white/80", children: t })
@@ -242,8 +242,8 @@ const we = m(
 );
 we.displayName = "FooterLink";
 const ke = m(
-  ({ logo: r, navItems: t = [], actions: a, sticky: s = !1, className: d, ...i }, o) => {
-    const [n, x] = h(!1);
+  ({ logo: r, navItems: t = [], actions: a, sticky: s = !1, className: d, ...n }, o) => {
+    const [i, x] = h(!1);
     return /* @__PURE__ */ e(
       "header",
       {
@@ -253,7 +253,7 @@ const ke = m(
           s && "sticky top-0",
           d
         ),
-        ...i,
+        ...n,
         children: /* @__PURE__ */ c("div", { className: "container mx-auto px-4 md:px-6 lg:px-8", children: [
           /* @__PURE__ */ c("div", { className: "flex items-center justify-between h-16 md:h-20", children: [
             /* @__PURE__ */ e("div", { className: "flex items-center", children: r && /* @__PURE__ */ e("div", { className: "text-secondary font-bold text-lg md:text-xl lg:text-2xl", children: r }) }),
@@ -271,13 +271,13 @@ const ke = m(
               "button",
               {
                 className: "md:hidden text-white hover:text-secondary transition-colors p-2",
-                onClick: () => x(!n),
+                onClick: () => x(!i),
                 "aria-label": "Toggle menu",
-                children: n ? /* @__PURE__ */ e(T, { className: "w-6 h-6" }) : /* @__PURE__ */ e(W, { className: "w-6 h-6" })
+                children: i ? /* @__PURE__ */ e(T, { className: "w-6 h-6" }) : /* @__PURE__ */ e(W, { className: "w-6 h-6" })
               }
             )
           ] }),
-          n && /* @__PURE__ */ c("div", { className: "md:hidden py-4 border-t border-secondary/30", children: [
+          i && /* @__PURE__ */ c("div", { className: "md:hidden py-4 border-t border-secondary/30", children: [
             /* @__PURE__ */ e("nav", { className: "flex flex-col gap-3", children: t.map((u, p) => /* @__PURE__ */ e(
               "a",
               {
@@ -316,7 +316,7 @@ const Ie = {
   lg: "gap-8",
   xl: "gap-12"
 }, Fe = m(
-  ({ cols: r = 3, gap: t = "md", responsive: a = !0, className: s, children: d, ...i }, o) => /* @__PURE__ */ e(
+  ({ cols: r = 3, gap: t = "md", responsive: a = !0, className: s, children: d, ...n }, o) => /* @__PURE__ */ e(
     "div",
     {
       ref: o,
@@ -326,7 +326,7 @@ const Ie = {
         Te[t],
         s
       ),
-      ...i,
+      ...n,
       children: d
     }
   )
@@ -343,10 +343,10 @@ const He = {
   primary: "text-primary",
   secondary: "text-secondary"
 }, je = m(
-  ({ as: r = "h2", variant: t = "primary", className: a, children: s, ...d }, i) => /* @__PURE__ */ e(
+  ({ as: r = "h2", variant: t = "primary", className: a, children: s, ...d }, n) => /* @__PURE__ */ e(
     r,
     {
-      ref: i,
+      ref: n,
       className: l(
         "font-bold",
         He[r],
@@ -375,15 +375,15 @@ const Ae = {
     image: a,
     overlay: s = !0,
     height: d = "lg",
-    alignment: i = "center",
+    alignment: n = "center",
     actions: o,
-    className: n,
+    className: i,
     ...x
   }, u) => /* @__PURE__ */ c(
     "section",
     {
       ref: u,
-      className: l("relative flex items-center justify-center", Ae[d], n),
+      className: l("relative flex items-center justify-center", Ae[d], i),
       ...x,
       children: [
         a && /* @__PURE__ */ c(M, { children: [
@@ -396,7 +396,7 @@ const Ae = {
           ),
           s && /* @__PURE__ */ e("div", { className: "absolute inset-0 bg-black/50" })
         ] }),
-        /* @__PURE__ */ e("div", { className: "relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full", children: /* @__PURE__ */ c("div", { className: l("flex flex-col gap-6", Se[i]), children: [
+        /* @__PURE__ */ e("div", { className: "relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full", children: /* @__PURE__ */ c("div", { className: l("flex flex-col gap-6", Se[n]), children: [
           /* @__PURE__ */ e(
             "h1",
             {
@@ -431,12 +431,12 @@ const ft = ({ icon: r, className: t }) => /* @__PURE__ */ e(r, { className: l("w
     helperText: a,
     icon: s,
     fullWidth: d = !1,
-    className: i,
+    className: n,
     disabled: o,
-    id: n,
+    id: i,
     ...x
   }, u) => {
-    const p = n || (r == null ? void 0 : r.toLowerCase().replace(/\s+/g, "-"));
+    const p = i || (r == null ? void 0 : r.toLowerCase().replace(/\s+/g, "-"));
     return /* @__PURE__ */ c("div", { className: l("", d && "w-full"), children: [
       r && /* @__PURE__ */ e(
         "label",
@@ -462,7 +462,7 @@ const ft = ({ icon: r, className: t }) => /* @__PURE__ */ e(r, { className: l("w
               "disabled:bg-gray-200 disabled:cursor-not-allowed disabled:text-gray-500",
               s ? "pl-10 md:pl-11 pr-3 md:pr-4" : "px-3 md:px-4",
               t ? "border-red-500 focus:ring-red-500 focus:border-red-500" : "border-primary/30",
-              i
+              n
             ),
             "aria-invalid": t ? "true" : "false",
             "aria-describedby": t ? `${p}-error` : a ? `${p}-helper` : void 0,
@@ -492,13 +492,13 @@ const Pe = m(
 );
 Pe.displayName = "Label";
 const Be = m(
-  ({ logo: r, sticky: t = !1, className: a, children: s, ...d }, i) => {
-    const [o, n] = h(!1);
+  ({ logo: r, sticky: t = !1, className: a, children: s, ...d }, n) => {
+    const [o, i] = h(!1);
     return /* @__PURE__ */ c(M, { children: [
       /* @__PURE__ */ e(
         "nav",
         {
-          ref: i,
+          ref: n,
           className: l(
             "bg-white shadow-md z-40",
             t && "sticky top-0",
@@ -511,7 +511,7 @@ const Be = m(
             /* @__PURE__ */ e("div", { className: "md:hidden", children: /* @__PURE__ */ e(
               "button",
               {
-                onClick: () => n(!o),
+                onClick: () => i(!o),
                 className: "p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary",
                 "aria-label": "Toggle menu",
                 children: o ? /* @__PURE__ */ e(T, { className: "w-6 h-6" }) : /* @__PURE__ */ e(W, { className: "w-6 h-6" })
@@ -520,16 +520,16 @@ const Be = m(
           ] }) })
         }
       ),
-      /* @__PURE__ */ e(_, { isOpen: o, onClose: () => n(!1), children: s })
+      /* @__PURE__ */ e(_, { isOpen: o, onClose: () => i(!1), children: s })
     ] });
   }
 );
 Be.displayName = "Nav";
 const Ee = m(
-  ({ href: r, active: t = !1, className: a, children: s, ...d }, i) => /* @__PURE__ */ e(
+  ({ href: r, active: t = !1, className: a, children: s, ...d }, n) => /* @__PURE__ */ e(
     "a",
     {
-      ref: i,
+      ref: n,
       href: r,
       className: l(
         "px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200",
@@ -545,7 +545,7 @@ const Ee = m(
 );
 Ee.displayName = "NavItem";
 const _ = m(
-  ({ isOpen: r, onClose: t, className: a, children: s, ...d }, i) => r ? /* @__PURE__ */ c(M, { children: [
+  ({ isOpen: r, onClose: t, className: a, children: s, ...d }, n) => r ? /* @__PURE__ */ c(M, { children: [
     /* @__PURE__ */ e(
       "div",
       {
@@ -557,7 +557,7 @@ const _ = m(
     /* @__PURE__ */ e(
       "div",
       {
-        ref: i,
+        ref: n,
         className: l(
           "fixed top-16 left-0 right-0 bg-white shadow-lg z-50 md:hidden",
           "max-h-[calc(100vh-4rem)] overflow-y-auto",
@@ -594,9 +594,9 @@ const qe = m(
     helperText: a,
     fullWidth: s = !1,
     className: d,
-    disabled: i,
+    disabled: n,
     id: o,
-    rows: n = 4,
+    rows: i = 4,
     ...x
   }, u) => {
     const p = o || (r == null ? void 0 : r.toLowerCase().replace(/\s+/g, "-"));
@@ -614,8 +614,8 @@ const qe = m(
         {
           ref: u,
           id: p,
-          rows: n,
-          disabled: i,
+          rows: i,
+          disabled: n,
           className: l(
             "block w-full rounded-md border transition-colors duration-200",
             "px-3 py-2 text-sm md:px-4 md:py-2.5 md:text-base",
@@ -644,9 +644,9 @@ const De = m(
     helperText: a,
     fullWidth: s = !1,
     className: d,
-    disabled: i,
+    disabled: n,
     id: o,
-    children: n,
+    children: i,
     ...x
   }, u) => {
     const p = o || (r == null ? void 0 : r.toLowerCase().replace(/\s+/g, "-"));
@@ -665,7 +665,7 @@ const De = m(
           {
             ref: u,
             id: p,
-            disabled: i,
+            disabled: n,
             className: l(
               "block w-full rounded-md border transition-colors duration-200 appearance-none",
               "px-3 py-2 text-sm md:px-4 md:py-2.5 md:text-base",
@@ -679,7 +679,7 @@ const De = m(
             "aria-invalid": t ? "true" : "false",
             "aria-describedby": t ? `${p}-error` : a ? `${p}-helper` : void 0,
             ...x,
-            children: n
+            children: i
           }
         ),
         /* @__PURE__ */ e("div", { className: "absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none", children: /* @__PURE__ */ e(z, { className: "w-4 h-4 md:w-5 md:h-5 text-primary/70" }) })
@@ -691,15 +691,15 @@ const De = m(
 );
 De.displayName = "Select";
 const D = m(
-  ({ label: r, error: t, className: a, disabled: s, id: d, ...i }, o) => {
-    const n = d || (r == null ? void 0 : r.toLowerCase().replace(/\s+/g, "-"));
+  ({ label: r, error: t, className: a, disabled: s, id: d, ...n }, o) => {
+    const i = d || (r == null ? void 0 : r.toLowerCase().replace(/\s+/g, "-"));
     return /* @__PURE__ */ c("div", { className: "flex items-start", children: [
       /* @__PURE__ */ e("div", { className: "flex items-center h-5 md:h-6", children: /* @__PURE__ */ e(
         "input",
         {
           ref: o,
           type: "checkbox",
-          id: n,
+          id: i,
           disabled: s,
           className: l(
             "w-4 h-4 md:w-5 md:h-5 rounded border-secondary transition-colors duration-200",
@@ -709,15 +709,15 @@ const D = m(
             a
           ),
           "aria-invalid": t ? "true" : "false",
-          "aria-describedby": t ? `${n}-error` : void 0,
-          ...i
+          "aria-describedby": t ? `${i}-error` : void 0,
+          ...n
         }
       ) }),
       r && /* @__PURE__ */ c("div", { className: "ml-3", children: [
         /* @__PURE__ */ e(
           "label",
           {
-            htmlFor: n,
+            htmlFor: i,
             className: l(
               "text-sm md:text-base text-white",
               s && "opacity-50 cursor-not-allowed"
@@ -725,22 +725,22 @@ const D = m(
             children: r
           }
         ),
-        t && /* @__PURE__ */ e("p", { id: `${n}-error`, className: "mt-1 text-sm text-red-600", children: t })
+        t && /* @__PURE__ */ e("p", { id: `${i}-error`, className: "mt-1 text-sm text-red-600", children: t })
       ] })
     ] });
   }
 );
 D.displayName = "Checkbox";
 const Oe = m(
-  ({ label: r, error: t, className: a, disabled: s, id: d, ...i }, o) => {
-    const n = d || (r == null ? void 0 : r.toLowerCase().replace(/\s+/g, "-"));
+  ({ label: r, error: t, className: a, disabled: s, id: d, ...n }, o) => {
+    const i = d || (r == null ? void 0 : r.toLowerCase().replace(/\s+/g, "-"));
     return /* @__PURE__ */ c("div", { className: "flex items-start", children: [
       /* @__PURE__ */ e("div", { className: "flex items-center h-5 md:h-6", children: /* @__PURE__ */ e(
         "input",
         {
           ref: o,
           type: "radio",
-          id: n,
+          id: i,
           disabled: s,
           className: l(
             "w-4 h-4 md:w-5 md:h-5 border-secondary transition-colors duration-200",
@@ -750,15 +750,15 @@ const Oe = m(
             a
           ),
           "aria-invalid": t ? "true" : "false",
-          "aria-describedby": t ? `${n}-error` : void 0,
-          ...i
+          "aria-describedby": t ? `${i}-error` : void 0,
+          ...n
         }
       ) }),
       r && /* @__PURE__ */ c("div", { className: "ml-3", children: [
         /* @__PURE__ */ e(
           "label",
           {
-            htmlFor: n,
+            htmlFor: i,
             className: l(
               "text-sm md:text-base text-white",
               s && "opacity-50 cursor-not-allowed"
@@ -766,14 +766,14 @@ const Oe = m(
             children: r
           }
         ),
-        t && /* @__PURE__ */ e("p", { id: `${n}-error`, className: "mt-1 text-sm text-red-600", children: t })
+        t && /* @__PURE__ */ e("p", { id: `${i}-error`, className: "mt-1 text-sm text-red-600", children: t })
       ] })
     ] });
   }
 );
 Oe.displayName = "Radio";
 const Re = m(
-  ({ isOpen: r, onClose: t, title: a, footer: s, className: d, children: i, ...o }, n) => (P(() => (r ? document.body.style.overflow = "hidden" : document.body.style.overflow = "unset", () => {
+  ({ isOpen: r, onClose: t, title: a, footer: s, className: d, children: n, ...o }, i) => (P(() => (r ? document.body.style.overflow = "hidden" : document.body.style.overflow = "unset", () => {
     document.body.style.overflow = "unset";
   }), [r]), P(() => {
     const x = (u) => {
@@ -792,7 +792,7 @@ const Re = m(
     /* @__PURE__ */ e("div", { className: "fixed inset-0 z-50 overflow-y-auto", children: /* @__PURE__ */ e("div", { className: "flex min-h-full items-center justify-center p-4", children: /* @__PURE__ */ c(
       "div",
       {
-        ref: n,
+        ref: i,
         className: l(
           "relative bg-primary rounded-lg shadow-xl",
           "w-full max-w-md md:max-w-lg",
@@ -823,7 +823,7 @@ const Re = m(
               }
             )
           ] }),
-          /* @__PURE__ */ e("div", { className: "px-4 py-4 md:px-6 md:py-6 text-white", children: i }),
+          /* @__PURE__ */ e("div", { className: "px-4 py-4 md:px-6 md:py-6 text-white", children: n }),
           s && /* @__PURE__ */ e("div", { className: "px-4 py-3 md:px-6 md:py-4 border-t border-secondary bg-primary/70 rounded-b-lg", children: s })
         ]
       }
@@ -861,8 +861,8 @@ const Ve = {
     iconClass: "text-red-400"
   }
 }, Ze = m(
-  ({ variant: r = "primary", type: t = "info", onClose: a, className: s, children: d, ...i }, o) => {
-    const n = Ve[t], x = n.icon;
+  ({ variant: r = "primary", type: t = "info", onClose: a, className: s, children: d, ...n }, o) => {
+    const i = Ve[t], x = i.icon;
     return /* @__PURE__ */ e(
       "div",
       {
@@ -870,14 +870,14 @@ const Ve = {
         role: "alert",
         className: l(
           "rounded-md border p-3 md:p-4",
-          n.bgClass,
-          n.borderClass,
+          i.bgClass,
+          i.borderClass,
           s
         ),
-        ...i,
+        ...n,
         children: /* @__PURE__ */ c("div", { className: "flex items-start gap-3", children: [
-          /* @__PURE__ */ e(x, { className: l("w-5 h-5 md:w-6 md:h-6 flex-shrink-0", n.iconClass) }),
-          /* @__PURE__ */ e("div", { className: l("flex-1 text-sm md:text-base", n.textClass), children: d }),
+          /* @__PURE__ */ e(x, { className: l("w-5 h-5 md:w-6 md:h-6 flex-shrink-0", i.iconClass) }),
+          /* @__PURE__ */ e("div", { className: l("flex-1 text-sm md:text-base", i.textClass), children: d }),
           a && /* @__PURE__ */ e(
             "button",
             {
@@ -885,7 +885,7 @@ const Ve = {
               className: l(
                 "flex-shrink-0 p-1 rounded-md transition-colors",
                 "hover:bg-black/5 focus:outline-none focus:ring-2 focus:ring-offset-2",
-                n.textClass
+                i.textClass
               ),
               "aria-label": "Dismiss alert",
               children: /* @__PURE__ */ e(T, { className: "w-4 h-4 md:w-5 md:h-5" })
@@ -899,7 +899,7 @@ const Ve = {
 Ze.displayName = "Alert";
 const We = m(
   ({ variant: r = "primary", label: t, className: a, ...s }, d) => {
-    const i = r === "primary" ? "border-primary" : "border-secondary";
+    const n = r === "primary" ? "border-primary" : "border-secondary";
     return /* @__PURE__ */ c("div", { ref: d, className: l("inline-flex flex-col items-center gap-2", a), ...s, children: [
       /* @__PURE__ */ e(
         "div",
@@ -907,7 +907,7 @@ const We = m(
           className: l(
             "w-8 h-8 md:w-10 md:h-10 rounded-full border-4 border-gray-200",
             "border-t-4",
-            i,
+            n,
             "animate-spin"
           ),
           role: "status",
@@ -935,11 +935,11 @@ const Ue = m(
 );
 Ue.displayName = "Divider";
 const Ge = m(
-  ({ defaultValue: r, value: t, onValueChange: a, className: s, children: d, ...i }, o) => {
-    const [n, x] = h(r || ""), u = t !== void 0 ? t : n, p = (g) => {
+  ({ defaultValue: r, value: t, onValueChange: a, className: s, children: d, ...n }, o) => {
+    const [i, x] = h(r || ""), u = t !== void 0 ? t : i, p = (g) => {
       t === void 0 && x(g), a == null || a(g);
     };
-    return /* @__PURE__ */ e("div", { ref: o, className: l("w-full", s), ...i, children: /* @__PURE__ */ e(O.Provider, { value: { value: u, onValueChange: p }, children: d }) });
+    return /* @__PURE__ */ e("div", { ref: o, className: l("w-full", s), ...n, children: /* @__PURE__ */ e(O.Provider, { value: { value: u, onValueChange: p }, children: d }) });
   }
 );
 Ge.displayName = "Tabs";
@@ -965,14 +965,14 @@ const O = E({
 Xe.displayName = "TabsList";
 const _e = m(
   ({ value: r, className: t, children: a, ...s }, d) => {
-    const i = N(O), o = i.value === r;
+    const n = N(O), o = n.value === r;
     return /* @__PURE__ */ e(
       "button",
       {
         ref: d,
         role: "tab",
         "aria-selected": o,
-        onClick: () => i.onValueChange(r),
+        onClick: () => n.onValueChange(r),
         className: l(
           "px-3 py-2 text-sm md:px-4 md:text-base font-medium rounded-md transition-colors duration-200",
           "focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2",
@@ -1001,12 +1001,12 @@ const Je = m(
 Je.displayName = "TabsContent";
 const Ke = m(
   ({ variant: r = "primary", className: t, children: a, ...s }, d) => {
-    const [i, o] = h([]), n = (x) => {
+    const [n, o] = h([]), i = (x) => {
       o(
         (u) => u.includes(x) ? u.filter((p) => p !== x) : [...u, x]
       );
     };
-    return /* @__PURE__ */ e("div", { ref: d, className: l("space-y-2", t), ...s, children: /* @__PURE__ */ e(R.Provider, { value: { openItems: i, toggleItem: n, variant: r }, children: a }) });
+    return /* @__PURE__ */ e("div", { ref: d, className: l("space-y-2", t), ...s, children: /* @__PURE__ */ e(R.Provider, { value: { openItems: n, toggleItem: i, variant: r }, children: a }) });
   }
 );
 Ke.displayName = "Accordion";
@@ -1035,19 +1035,19 @@ const R = E({
 Qe.displayName = "AccordionItem";
 const Ye = m(
   ({ className: r, children: t, ...a }, s) => {
-    const d = N(R), i = N(V);
+    const d = N(R), n = N(V);
     return /* @__PURE__ */ c(
       "button",
       {
         ref: s,
-        onClick: () => d.toggleItem(i.value),
+        onClick: () => d.toggleItem(n.value),
         className: l(
           "flex w-full items-center justify-between px-4 py-3 md:px-5 md:py-4",
           "text-left text-sm md:text-base font-medium",
           "text-white hover:text-secondary transition-colors duration-200",
           "focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-inset",
           "rounded-t-lg",
-          i.isOpen ? "" : "rounded-b-lg",
+          n.isOpen ? "" : "rounded-b-lg",
           r
         ),
         ...a,
@@ -1058,7 +1058,7 @@ const Ye = m(
             {
               className: l(
                 "w-5 h-5 md:w-6 md:h-6 transition-transform duration-200",
-                i.isOpen && "rotate-180"
+                n.isOpen && "rotate-180"
               )
             }
           )
@@ -1150,25 +1150,26 @@ const lt = m(
   )
 );
 lt.displayName = "TableCell";
-const it = m(
-  ({ name: r, position: t, number: a, image: s, stats: d, variant: i = "primary", className: o, ...n }, x) => /* @__PURE__ */ c(
+const nt = m(
+  ({ name: r, position: t, number: a, image: s, stats: d, variant: n = "primary", className: o, ...i }, x) => /* @__PURE__ */ c(
     "div",
     {
       ref: x,
       className: l(
         "bg-primary rounded-lg shadow-md overflow-hidden transition-transform duration-200 hover:shadow-lg hover:-translate-y-1",
+        "max-w-sm mx-auto",
         o
       ),
-      ...n,
+      ...i,
       children: [
         /* @__PURE__ */ c("div", { className: l(
-          "relative h-48 md:h-64 flex items-center justify-center",
-          i === "primary" ? "bg-primary" : "bg-secondary"
+          "relative w-full aspect-square flex items-center justify-center",
+          n === "primary" ? "bg-primary" : "bg-secondary"
         ), children: [
           s ? /* @__PURE__ */ e("img", { src: s, alt: r, className: "w-full h-full object-cover" }) : /* @__PURE__ */ e(U, { className: "w-20 h-20 md:w-24 md:h-24 text-white opacity-50" }),
           /* @__PURE__ */ c("div", { className: l(
             "absolute top-3 right-3 md:top-4 md:right-4 w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center font-bold text-xl md:text-2xl",
-            i === "primary" ? "bg-secondary text-black" : "bg-primary text-white"
+            n === "primary" ? "bg-secondary text-black" : "bg-primary text-white"
           ), children: [
             "#",
             a
@@ -1186,17 +1187,17 @@ const it = m(
     }
   )
 );
-it.displayName = "PlayerCard";
-const nt = m(
+nt.displayName = "PlayerCard";
+const it = m(
   ({
     homeTeam: r,
     awayTeam: t,
     homeScore: a,
     awayScore: s,
     date: d,
-    time: i,
+    time: n,
     location: o,
-    status: n = "upcoming",
+    status: i = "upcoming",
     variant: x = "primary",
     className: u,
     ...p
@@ -1210,14 +1211,14 @@ const nt = m(
       ),
       ...p,
       children: [
-        n === "live" && /* @__PURE__ */ c("div", { className: "flex items-center gap-2 mb-3", children: [
+        i === "live" && /* @__PURE__ */ c("div", { className: "flex items-center gap-2 mb-3", children: [
           /* @__PURE__ */ e("div", { className: "w-2 h-2 md:w-3 md:h-3 rounded-full bg-red-500 animate-pulse" }),
           /* @__PURE__ */ e("span", { className: "text-xs md:text-sm font-semibold text-red-500 uppercase", children: "Live" })
         ] }),
         /* @__PURE__ */ c("div", { className: "flex items-center justify-between mb-4", children: [
           /* @__PURE__ */ c("div", { className: "flex-1 text-center", children: [
             /* @__PURE__ */ e("h3", { className: "text-base md:text-lg font-bold text-white mb-2", children: r }),
-            n !== "upcoming" && a !== void 0 && /* @__PURE__ */ e("p", { className: l(
+            i !== "upcoming" && a !== void 0 && /* @__PURE__ */ e("p", { className: l(
               "text-3xl md:text-4xl font-bold",
               x === "primary" ? "text-secondary" : "text-white"
             ), children: a })
@@ -1225,7 +1226,7 @@ const nt = m(
           /* @__PURE__ */ e("div", { className: "px-4 md:px-6", children: /* @__PURE__ */ e("span", { className: "text-xl md:text-2xl font-bold text-secondary", children: "VS" }) }),
           /* @__PURE__ */ c("div", { className: "flex-1 text-center", children: [
             /* @__PURE__ */ e("h3", { className: "text-base md:text-lg font-bold text-white mb-2", children: t }),
-            n !== "upcoming" && s !== void 0 && /* @__PURE__ */ e("p", { className: l(
+            i !== "upcoming" && s !== void 0 && /* @__PURE__ */ e("p", { className: l(
               "text-3xl md:text-4xl font-bold",
               x === "primary" ? "text-secondary" : "text-white"
             ), children: s })
@@ -1237,7 +1238,7 @@ const nt = m(
             /* @__PURE__ */ c("span", { children: [
               d,
               " at ",
-              i
+              n
             ] })
           ] }),
           o && /* @__PURE__ */ c("div", { className: "flex items-center gap-2 text-sm md:text-base text-white/80", children: [
@@ -1245,12 +1246,12 @@ const nt = m(
             /* @__PURE__ */ e("span", { children: o })
           ] })
         ] }),
-        n === "finished" && /* @__PURE__ */ e("div", { className: "mt-4 text-center", children: /* @__PURE__ */ e("span", { className: "text-xs md:text-sm font-medium text-secondary uppercase", children: "Final" }) })
+        i === "finished" && /* @__PURE__ */ e("div", { className: "mt-4 text-center", children: /* @__PURE__ */ e("span", { className: "text-xs md:text-sm font-medium text-secondary uppercase", children: "Final" }) })
       ]
     }
   )
 );
-nt.displayName = "MatchCard";
+it.displayName = "MatchCard";
 const ot = m(
   ({
     onSubmit: r,
@@ -1258,9 +1259,9 @@ const ot = m(
     error: a,
     className: s,
     emailLabel: d = "Email",
-    emailPlaceholder: i,
+    emailPlaceholder: n,
     passwordLabel: o = "Password",
-    passwordPlaceholder: n,
+    passwordPlaceholder: i,
     rememberLabel: x = "Remember me",
     forgotPasswordText: u,
     forgotPasswordHref: p,
@@ -1285,7 +1286,7 @@ const ot = m(
             {
               type: "email",
               label: d,
-              placeholder: i,
+              placeholder: n,
               value: C,
               onChange: (b) => j(b.target.value),
               icon: /* @__PURE__ */ e(G, { className: "w-5 h-5" }),
@@ -1299,7 +1300,7 @@ const ot = m(
             {
               type: "password",
               label: o,
-              placeholder: n,
+              placeholder: i,
               value: v,
               onChange: (b) => w(b.target.value),
               icon: /* @__PURE__ */ e(B, { className: "w-5 h-5" }),
@@ -1389,9 +1390,9 @@ const xt = m(
     error: a,
     className: s,
     nameLabel: d = "Full Name",
-    namePlaceholder: i,
+    namePlaceholder: n,
     emailLabel: o = "Email",
-    emailPlaceholder: n,
+    emailPlaceholder: i,
     passwordLabel: x = "Password",
     passwordPlaceholder: u,
     confirmPasswordLabel: p = "Confirm Password",
@@ -1423,7 +1424,7 @@ const xt = m(
             {
               type: "text",
               label: d,
-              placeholder: i,
+              placeholder: n,
               value: w,
               onChange: (y) => k(y.target.value),
               icon: /* @__PURE__ */ e(U, { className: "w-5 h-5" }),
@@ -1437,7 +1438,7 @@ const xt = m(
             {
               type: "email",
               label: o,
-              placeholder: n,
+              placeholder: i,
               value: I,
               onChange: (y) => Z(y.target.value),
               icon: /* @__PURE__ */ e(G, { className: "w-5 h-5" }),
@@ -1500,6 +1501,8 @@ const pt = (r) => {
       return "aspect-[4/3] md:aspect-[16/9]";
     case "tall":
       return "aspect-[3/4] md:aspect-[9/16]";
+    case "panoramic":
+      return "h-56 md:h-72 lg:h-96 xl:h-112 aspect-auto";
     case "square":
     default:
       return "aspect-square md:aspect-[5/4]";
@@ -1511,18 +1514,18 @@ const pt = (r) => {
     description: a,
     variant: s = "primary",
     aspectRatio: d = "square",
-    className: i,
+    className: n,
     ...o
-  }, n) => {
+  }, i) => {
     const x = t || a;
     return /* @__PURE__ */ c(
       "div",
       {
-        ref: n,
+        ref: i,
         className: l(
           "bg-primary rounded-lg shadow-md overflow-hidden transition-transform duration-200 hover:shadow-lg hover:-translate-y-1",
-          "max-w-md w-full mx-auto",
-          i
+          d === "panoramic" ? "w-full rounded-none shadow-none hover:shadow-none hover:-translate-y-0" : "max-w-md w-full mx-auto",
+          n
         ),
         ...o,
         children: [
@@ -1535,7 +1538,7 @@ const pt = (r) => {
                 s === "primary" ? "bg-primary" : "bg-secondary"
               ),
               children: r ? /* @__PURE__ */ e("img", { src: r, alt: t || "Image Block", className: "w-full h-full object-cover" }) : /* @__PURE__ */ c("div", { className: "flex flex-col items-center text-white/50 p-4", children: [
-                /* @__PURE__ */ e(ie, { className: "w-16 h-16 md:w-20 md:h-20 opacity-50 mb-2" }),
+                /* @__PURE__ */ e(ne, { className: "w-16 h-16 md:w-20 md:h-20 opacity-50 mb-2" }),
                 /* @__PURE__ */ e("span", { className: "text-sm", children: "No Image Available" })
               ] })
             }
@@ -1581,12 +1584,12 @@ export {
   Pe as Label,
   ot as LoginForm,
   mt as Logo,
-  nt as MatchCard,
+  it as MatchCard,
   _ as MobileMenu,
   Re as Modal,
   Be as Nav,
   Ee as NavItem,
-  it as PlayerCard,
+  nt as PlayerCard,
   Oe as Radio,
   De as Select,
   xt as SignUpForm,

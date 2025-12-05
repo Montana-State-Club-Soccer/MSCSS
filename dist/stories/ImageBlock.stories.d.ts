@@ -9,4 +9,5 @@ export declare const SecondaryVariant: Story;
 export declare const PlaceholderImage: Story;
 export declare const WideAspect: Story;
 export declare const TallAspect: Story;
+export declare const PanoramicBanner: Story;
 //# sourceMappingURL=ImageBlock.stories.d.ts.map
