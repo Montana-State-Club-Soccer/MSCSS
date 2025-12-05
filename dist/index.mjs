@@ -14,7 +14,7 @@ function l() {
   for (var r, t, a = 0, s = "", d = arguments.length; a < d; a++) (r = arguments[a]) && (t = X(r)) && (s && (s += " "), s += t);
   return s;
 }
-const ie = {
+const ne = {
   primary: "bg-primary text-white",
   secondary: "bg-secondary text-primary"
 }, oe = m(
@@ -25,7 +25,7 @@ const ie = {
       className: l(
         "inline-flex items-center justify-center font-semibold rounded-full",
         "px-2 py-0.5 text-xs md:px-3 md:py-1 md:text-sm",
-        ie[r],
+        ne[r],
         t
       ),
       ...s,
