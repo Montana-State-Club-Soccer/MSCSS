@@ -1,6 +1,6 @@
 {
   "name": "mscss-montana",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A reusable Tailwind CSS component library for the Montana State Club Soccer web ecosystem",
   "publishConfig": {
     "access": "public"
